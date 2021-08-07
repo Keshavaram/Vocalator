@@ -480,8 +480,8 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonClear"
-        app:layout_constraintEnd_toStartOf="@+id/buttonNeg"
-        app:layout_constraintStart_toEndOf="@+id/buttonClear" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -501,24 +501,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDivision"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/buttonNeg"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:background="@drawable/button_config"
-        android:onClick="neg"
-        android:text="+/-"
-        android:textColor="#FF6D00"
-        android:textColorHighlight="#000000"
-        android:textColorHint="#000000"
-        android:textSize="20sp"
-        app:backgroundTint="#FFFFFF"
-        app:backgroundTintMode="multiply"
-        app:iconTint="#000000"
-        app:layout_constraintBaseline_toBaselineOf="@+id/voiceDetected"
-        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
-        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
-        app:rippleColor="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -242,6 +242,12 @@ public class MainActivity extends AppCompatActivity
         String operator = b.getText().toString();
         String value = newNumber.getText().toString();
 
+        if (operator.equals("-") && operand1 == null)
+        {
+            performOps("0","-");
+            pendingOperator = "-";
+        }
+
         if (value.equals(".") || value.equals("-") || value.equals("-."))
         {
             result.setText("Enter valid Number");
@@ -370,28 +376,5 @@ public class MainActivity extends AppCompatActivity
         }
 
         Log.d(TAG, "speechModification: Number is -> " + voiceData.get(1));
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void neg(View v)
-    {
-        String value = newNumber.getText().toString();
-        if (value.length() == 0)
-        {
-            newNumber.setText("-");
-            detectedText.append("-");
-        } else
-        {
-            try
-            {
-                double doubleValue = Double.parseDouble(value);
-                doubleValue *= -1;
-                newNumber.setText(Double.toString(doubleValue));
-                detectedText.append(doubleValue);
-            } catch(NumberFormatException e)
-            {
-                newNumber.setText("");
-            }
-        }
     }
 }
