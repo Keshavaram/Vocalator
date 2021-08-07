@@ -49,9 +49,6 @@ public class MainActivity extends AppCompatActivity
 
     StringBuilder detectedText;
 
-    Button help;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -74,11 +71,6 @@ public class MainActivity extends AppCompatActivity
         ab.setBackgroundDrawable(cd);
 
 
-        help = findViewById(R.id.help);
-        help.setOnClickListener(v -> {
-            Intent i = new Intent(this,help.class);
-            startActivity(i);
-        });
 
         history.setMovementMethod(new ScrollingMovementMethod());
 
@@ -184,7 +176,7 @@ public class MainActivity extends AppCompatActivity
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
-    private void performOps(String value, String operation)
+    private void performOps(String value, String operation) throws IllegalStateException
     {
         state = false;
         voice.setBackground(getDrawable(R.drawable.micoff));
@@ -250,7 +242,7 @@ public class MainActivity extends AppCompatActivity
         String operator = b.getText().toString();
         String value = newNumber.getText().toString();
 
-        if (value.equals("."))
+        if (value.equals(".") || value.equals("-") || value.equals("-."))
         {
             result.setText("Enter valid Number");
         } else if (value.length() != 0)
@@ -259,10 +251,12 @@ public class MainActivity extends AppCompatActivity
         }
 
         pendingOperator = operator;
+
         if(!operator.equals("="))
         {
             operatorView.setText(operator);
         } else {operatorView.setText("");}
+
         if (!b.getText().equals("="))
         {
             detectedText.append(b.getText());
@@ -376,5 +370,28 @@ public class MainActivity extends AppCompatActivity
         }
 
         Log.d(TAG, "speechModification: Number is -> " + voiceData.get(1));
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void neg(View v)
+    {
+        String value = newNumber.getText().toString();
+        if (value.length() == 0)
+        {
+            newNumber.setText("-");
+            detectedText.append("-");
+        } else
+        {
+            try
+            {
+                double doubleValue = Double.parseDouble(value);
+                doubleValue *= -1;
+                newNumber.setText(Double.toString(doubleValue));
+                detectedText.append(doubleValue);
+            } catch(NumberFormatException e)
+            {
+                newNumber.setText("");
+            }
+        }
     }
 }

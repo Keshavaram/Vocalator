@@ -26,7 +26,8 @@
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/newNumber"
@@ -45,7 +46,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/result" />
+        app:layout_constraintTop_toBottomOf="@+id/result"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
         android:id="@+id/textView"
@@ -451,7 +453,7 @@
         android:onClick="clearOps"
         android:text="AC"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="#FF6E40"
+        android:textColor="#FF6D00"
         android:textSize="20sp"
         app:backgroundTint="#FFFFFF"
         app:backgroundTintMode="multiply"
@@ -478,7 +480,7 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonClear"
-        app:layout_constraintEnd_toStartOf="@+id/help"
+        app:layout_constraintEnd_toStartOf="@+id/buttonNeg"
         app:layout_constraintStart_toEndOf="@+id/buttonClear" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -490,26 +492,33 @@
 
     <ImageButton
         android:id="@+id/voice"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:background="@drawable/custom_mic"
         android:onClick="trigger"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonDivision" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonDivision"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/help"
+        android:id="@+id/buttonNeg"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/help_button"
-        android:textColor="#FFFFFF"
+        android:background="@drawable/button_config"
+        android:onClick="neg"
+        android:text="+/-"
+        android:textColor="#FF6D00"
+        android:textColorHighlight="#000000"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
         app:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAdd"
+        app:backgroundTintMode="multiply"
+        app:iconTint="#000000"
+        app:layout_constraintBaseline_toBaselineOf="@+id/voiceDetected"
         app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonAdd" />
+        app:layout_constraintStart_toStartOf="@+id/buttonAdd"
+        app:rippleColor="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
