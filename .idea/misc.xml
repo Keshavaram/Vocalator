@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable/test.xml" value="0.20677083333333332" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.103125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.103125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/newIcon_round.xml" value="0.103125" />
       </map>
     </option>
   </component>
