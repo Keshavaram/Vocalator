@@ -242,10 +242,10 @@ public class MainActivity extends AppCompatActivity
         String operator = b.getText().toString();
         String value = newNumber.getText().toString();
 
-        if (operator.equals("-") && operand1 == null)
+        if (operator.equals("-") && operand1 == null && operand2 == null)
         {
             performOps("0","-");
-            pendingOperator = "-";
+            pendingOperator = "+";
         }
 
         if (value.equals(".") || value.equals("-") || value.equals("-."))
