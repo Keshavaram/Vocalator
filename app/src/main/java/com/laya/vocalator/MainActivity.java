@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity
         history = findViewById(R.id.voiceDetected);
         detectedText = new StringBuilder();
 
-        ActionBar ab = getSupportActionBar();
-        ColorDrawable cd = new ColorDrawable(Color.parseColor("#000000"));
-        assert ab != null;
-        ab.setBackgroundDrawable(cd);
+//        ActionBar ab = getSupportActionBar();
+//        ColorDrawable cd = new ColorDrawable(Color.parseColor("#000000"));
+//        assert ab != null;
+//        ab.setBackgroundDrawable(cd);
 
 
 
